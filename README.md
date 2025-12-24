@@ -1,73 +1,65 @@
-# Welcome to your Lovable project
+# 雅韵茶酒 - YA YUN COLLECTION
 
-## Project info
+> Website thương mại điện tử cao cấp chuyên về Trà và Rượu Trung Quốc
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+---
 
-## How can I edit this code?
+## 📋 Tổng quan
 
-There are several ways of editing your application.
+**雅韵茶酒 (Nhã Vận Trà Tửu)** là nền tảng e-commerce cao cấp phân phối Trà và Rượu Trung Quốc, nhắm đến khách hàng 35-50+ tuổi.
 
-**Use Lovable**
+---
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+## 🛒 Trang Client
 
-Changes made via Lovable will be committed automatically to this repo.
+| Trang | Route | Chức năng |
+|-------|-------|-----------|
+| **Trang chủ** | `/` | Hero carousel, sản phẩm nổi bật, danh mục, brand story, dịch vụ |
+| **Danh mục Trà** | `/tea` | Lọc theo loại (Phổ Nhĩ, Ô Long...), vùng trồng, grid/list view |
+| **Danh mục Rượu** | `/liquor` | Lọc theo hương (Tương, Nồng, Thanh...), năm ủ, điểm đánh giá |
+| **Quà tặng** | `/gifts` | Bộ quà theo danh mục (Thương vụ, Trưởng bối, Tiết lễ), dịch vụ tùy chỉnh |
+| **Văn hóa & Truy xuất** | `/culture` | Học viện video, xác thực chống giả, khám phá vùng trồng, livestream |
+| **Tài khoản** | `/account` | Đơn hàng, bộ sưu tập (theo dõi tăng giá), địa chỉ, quản gia VIP 1:1 |
 
-**Use your preferred IDE**
+---
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+## 🔐 Trang Admin (Dự kiến)
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+| Module | Chức năng |
+|--------|-----------|
+| **Dashboard** | Thống kê doanh thu, đơn hàng, khách hàng mới |
+| **Sản phẩm** | CRUD sản phẩm, danh mục, tồn kho, hình ảnh |
+| **Đơn hàng** | Quản lý trạng thái, vận chuyển, hoàn trả |
+| **Khách hàng** | Thông tin, cấp bậc VIP, điểm tích lũy |
+| **Quà tặng** | Tạo combo, dịch vụ tùy chỉnh |
+| **Nội dung** | Banner, video học viện, vùng trồng |
+| **Khuyến mãi** | Voucher, flash sale |
+| **Truy xuất** | Mã chống giả, lô sản xuất |
+| **Báo cáo** | Doanh thu, sản phẩm, khách hàng |
 
-Follow these steps:
+---
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+## 🎨 Design System
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+- **Màu chính**: Wine (#6B2D2D), Gold (#D4A44A), Cream (#FAF7F2)
+- **Font**: Noto Serif SC, Playfair Display
+- **Animation**: fade-up, scale-in, float
 
-# Step 3: Install the necessary dependencies.
-npm i
+---
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+## 🛠️ Công nghệ
+
+React 18 • TypeScript • Vite • Tailwind CSS • Shadcn/UI • React Router • TanStack Query
+
+---
+
+## 📦 Cài đặt
+
+```bash
+npm install
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+---
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+© 2024 雅韵茶酒 YA YUN COLLECTION
