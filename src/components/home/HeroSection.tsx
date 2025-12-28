@@ -1,33 +1,35 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import { ChevronRight, Play } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import heroTeaMountain from "@/assets/hero-tea-mountain.jpg";
 import heroLiquorCellar from "@/assets/hero-liquor-cellar.jpg";
 
-const slides = [
-  {
-    id: 1,
-    image: heroTeaMountain,
-    title: "云雾茶山",
-    subtitle: "千年古树 · 匠心传承",
-    description: "源自云南高山的古树普洱，每一片茶叶都蕴含着岁月的韵味",
-    link: "/tea",
-    linkText: "探索茗茶",
-  },
-  {
-    id: 2,
-    image: heroLiquorCellar,
-    title: "窖藏佳酿",
-    subtitle: "岁月陈香 · 尊贵典藏",
-    description: "精选国酒级酱香白酒，时光沉淀的醇厚回味",
-    link: "/liquor",
-    linkText: "品鉴名酒",
-  },
-];
-
 export function HeroSection() {
+  const { t } = useTranslation();
   const [currentSlide, setCurrentSlide] = useState(0);
+
+  const slides = [
+    {
+      id: 1,
+      image: heroTeaMountain,
+      title: t('home.slide1.title'),
+      subtitle: t('home.slide1.subtitle'),
+      description: t('home.slide1.description'),
+      link: "/tea",
+      linkText: t('home.slide1.linkText'),
+    },
+    {
+      id: 2,
+      image: heroLiquorCellar,
+      title: t('home.slide2.title'),
+      subtitle: t('home.slide2.subtitle'),
+      description: t('home.slide2.description'),
+      link: "/liquor",
+      linkText: t('home.slide2.linkText'),
+    },
+  ];
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -85,7 +87,7 @@ export function HeroSection() {
             </Link>
             <Button variant="hero" size="xl">
               <Play className="w-5 h-5" />
-              观看品牌大片
+              {t('home.slide1.watchVideo')}
             </Button>
           </div>
         </div>
@@ -108,7 +110,7 @@ export function HeroSection() {
 
       {/* Scroll Indicator */}
       <div className="absolute bottom-12 right-8 z-10 hidden lg:flex flex-col items-center gap-2 text-primary-foreground/60">
-        <span className="text-xs tracking-widest rotate-90 origin-center translate-y-6">SCROLL</span>
+        <span className="text-xs tracking-widest rotate-90 origin-center translate-y-6">{t('home.scroll')}</span>
         <div className="w-px h-16 bg-gradient-to-b from-transparent via-primary-foreground/40 to-primary-foreground/40 animate-pulse" />
       </div>
     </section>

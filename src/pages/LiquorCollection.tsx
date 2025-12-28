@@ -1,102 +1,104 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
 import { ChevronRight, Grid3X3, LayoutList, Calendar, Award } from "lucide-react";
 import productBaijiu from "@/assets/product-baijiu.jpg";
 
-const aromaTypes = [
-  { id: "all", name: "全部香型" },
-  { id: "maotai", name: "酱香型" },
-  { id: "luzhou", name: "浓香型" },
-  { id: "qingxiang", name: "清香型" },
-  { id: "fenxiang", name: "凤香型" },
-  { id: "other", name: "其他香型" },
-];
-
-const vintages = [
-  { id: "all", name: "全部年份" },
-  { id: "5", name: "5年陈" },
-  { id: "10", name: "10年陈" },
-  { id: "15", name: "15年陈" },
-  { id: "20", name: "20年陈" },
-  { id: "30", name: "30年藏" },
-];
-
-const products = [
-  {
-    id: 1,
-    name: "国韵酱香",
-    subtitle: "15年窖藏 · 500ml",
-    price: "¥2,980",
-    aroma: "酱香型",
-    vintage: "15年",
-    image: productBaijiu,
-    tag: "镇店之宝",
-    rating: "98分",
-  },
-  {
-    id: 2,
-    name: "五粮液经典",
-    subtitle: "浓香典范 · 500ml",
-    price: "¥1,680",
-    aroma: "浓香型",
-    vintage: "10年",
-    image: productBaijiu,
-    tag: null,
-    rating: "96分",
-  },
-  {
-    id: 3,
-    name: "汾酒青花",
-    subtitle: "清香佳酿 · 500ml",
-    price: "¥880",
-    aroma: "清香型",
-    vintage: "10年",
-    image: productBaijiu,
-    tag: "热销",
-    rating: "94分",
-  },
-  {
-    id: 4,
-    name: "茅台飞天",
-    subtitle: "国酒典范 · 500ml",
-    price: "¥3,580",
-    aroma: "酱香型",
-    vintage: "15年",
-    image: productBaijiu,
-    tag: "收藏级",
-    rating: "99分",
-  },
-  {
-    id: 5,
-    name: "龙年生肖酒",
-    subtitle: "2024限量版 · 1000ml",
-    price: "¥5,880",
-    aroma: "酱香型",
-    vintage: "20年",
-    image: productBaijiu,
-    tag: "限量版",
-    rating: "99分",
-  },
-  {
-    id: 6,
-    name: "窖藏原浆",
-    subtitle: "30年老酒 · 500ml",
-    price: "¥8,880",
-    aroma: "酱香型",
-    vintage: "30年",
-    image: productBaijiu,
-    tag: "珍藏",
-    rating: "100分",
-  },
-];
-
 const LiquorCollection = () => {
+  const { t } = useTranslation();
   const [activeAroma, setActiveAroma] = useState("all");
   const [activeVintage, setActiveVintage] = useState("all");
   const [viewMode, setViewMode] = useState<"grid" | "list">("grid");
+
+  const aromaTypes = [
+    { id: "all", name: t("home.liquorCollection.aromaTypes.all") },
+    { id: "maotai", name: t("home.liquorCollection.aromaTypes.maotai") },
+    { id: "luzhou", name: t("home.liquorCollection.aromaTypes.luzhou") },
+    { id: "qingxiang", name: t("home.liquorCollection.aromaTypes.qingxiang") },
+    { id: "fenxiang", name: t("home.liquorCollection.aromaTypes.fenxiang") },
+    { id: "other", name: t("home.liquorCollection.aromaTypes.other") },
+  ];
+
+  const vintages = [
+    { id: "all", name: t("home.liquorCollection.vintages.all") },
+    { id: "5", name: t("home.liquorCollection.vintages.5") },
+    { id: "10", name: t("home.liquorCollection.vintages.10") },
+    { id: "15", name: t("home.liquorCollection.vintages.15") },
+    { id: "20", name: t("home.liquorCollection.vintages.20") },
+    { id: "30", name: t("home.liquorCollection.vintages.30") },
+  ];
+
+  const products = [
+    {
+      id: 1,
+      name: t("home.liquorCollection.products.1.name"),
+      subtitle: t("home.liquorCollection.products.1.subtitle"),
+      price: t("home.liquorCollection.products.1.price"),
+      aroma: t("home.liquorCollection.products.1.aroma"),
+      vintage: t("home.liquorCollection.products.1.vintage"),
+      image: productBaijiu,
+      tag: t("home.liquorCollection.products.1.tag"),
+      rating: t("home.liquorCollection.products.1.rating"),
+    },
+    {
+      id: 2,
+      name: t("home.liquorCollection.products.2.name"),
+      subtitle: t("home.liquorCollection.products.2.subtitle"),
+      price: t("home.liquorCollection.products.2.price"),
+      aroma: t("home.liquorCollection.products.2.aroma"),
+      vintage: t("home.liquorCollection.products.2.vintage"),
+      image: productBaijiu,
+      tag: t("home.liquorCollection.products.2.tag"),
+      rating: t("home.liquorCollection.products.2.rating"),
+    },
+    {
+      id: 3,
+      name: t("home.liquorCollection.products.3.name"),
+      subtitle: t("home.liquorCollection.products.3.subtitle"),
+      price: t("home.liquorCollection.products.3.price"),
+      aroma: t("home.liquorCollection.products.3.aroma"),
+      vintage: t("home.liquorCollection.products.3.vintage"),
+      image: productBaijiu,
+      tag: t("home.liquorCollection.products.3.tag"),
+      rating: t("home.liquorCollection.products.3.rating"),
+    },
+    {
+      id: 4,
+      name: t("home.liquorCollection.products.4.name"),
+      subtitle: t("home.liquorCollection.products.4.subtitle"),
+      price: t("home.liquorCollection.products.4.price"),
+      aroma: t("home.liquorCollection.products.4.aroma"),
+      vintage: t("home.liquorCollection.products.4.vintage"),
+      image: productBaijiu,
+      tag: t("home.liquorCollection.products.4.tag"),
+      rating: t("home.liquorCollection.products.4.rating"),
+    },
+    {
+      id: 5,
+      name: t("home.liquorCollection.products.5.name"),
+      subtitle: t("home.liquorCollection.products.5.subtitle"),
+      price: t("home.liquorCollection.products.5.price"),
+      aroma: t("home.liquorCollection.products.5.aroma"),
+      vintage: t("home.liquorCollection.products.5.vintage"),
+      image: productBaijiu,
+      tag: t("home.liquorCollection.products.5.tag"),
+      rating: t("home.liquorCollection.products.5.rating"),
+    },
+    {
+      id: 6,
+      name: t("home.liquorCollection.products.6.name"),
+      subtitle: t("home.liquorCollection.products.6.subtitle"),
+      price: t("home.liquorCollection.products.6.price"),
+      aroma: t("home.liquorCollection.products.6.aroma"),
+      vintage: t("home.liquorCollection.products.6.vintage"),
+      image: productBaijiu,
+      tag: t("home.liquorCollection.products.6.tag"),
+      rating: t("home.liquorCollection.products.6.rating"),
+    },
+  ];
 
   return (
     <div className="min-h-screen bg-background">
@@ -107,13 +109,13 @@ const LiquorCollection = () => {
         <section className="bg-gradient-hero text-primary-foreground py-20">
           <div className="container mx-auto px-4 lg:px-8">
             <nav className="flex items-center gap-2 text-sm text-primary-foreground/60 mb-6">
-              <Link to="/" className="hover:text-gold transition-colors">首页</Link>
+              <Link to="/" className="hover:text-gold transition-colors">{t("home.liquorCollection.breadcrumbHome")}</Link>
               <ChevronRight className="w-4 h-4" />
-              <span className="text-gold">佳酿陈列</span>
+              <span className="text-gold">{t("home.liquorCollection.breadcrumbCurrent")}</span>
             </nav>
-            <h1 className="font-display text-5xl md:text-6xl mb-4">佳酿陈列</h1>
+            <h1 className="font-display text-5xl md:text-6xl mb-4">{t("home.liquorCollection.title")}</h1>
             <p className="text-xl text-primary-foreground/70 max-w-xl">
-              窖藏陈酿，岁月醇香。甄选国酒级佳酿，献给尊贵的品鉴者
+              {t("home.liquorCollection.description")}
             </p>
           </div>
         </section>
@@ -234,7 +236,7 @@ const LiquorCollection = () => {
             {/* Load More */}
             <div className="text-center mt-12">
               <Button variant="outline" size="lg">
-                加载更多
+                {t("home.liquorCollection.loadMore")}
               </Button>
             </div>
           </div>

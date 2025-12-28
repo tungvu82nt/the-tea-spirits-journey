@@ -1,38 +1,40 @@
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import { ArrowUpRight } from "lucide-react";
 import heroTeaMountain from "@/assets/hero-tea-mountain.jpg";
 import heroLiquorCellar from "@/assets/hero-liquor-cellar.jpg";
 
-const categories = [
-  {
-    id: "tea",
-    title: "茗茶萃取",
-    subtitle: "TEA SELECTION",
-    description: "从普洱陈韵到岩茶醇香，探索中华茶道的深厚底蕴",
-    image: heroTeaMountain,
-    link: "/tea",
-    stats: [
-      { label: "产区", value: "8+" },
-      { label: "品类", value: "50+" },
-      { label: "年份", value: "20+" },
-    ],
-  },
-  {
-    id: "liquor",
-    title: "佳酿陈列",
-    subtitle: "LIQUOR COLLECTION",
-    description: "酱香浓香荟萃一堂，品味岁月沉淀的醇厚回味",
-    image: heroLiquorCellar,
-    link: "/liquor",
-    stats: [
-      { label: "香型", value: "5+" },
-      { label: "品牌", value: "30+" },
-      { label: "窖藏", value: "30年" },
-    ],
-  },
-];
-
 export function CategoryShowcase() {
+  const { t } = useTranslation();
+
+  const categories = [
+    {
+      id: "tea",
+      title: t("home.categoryShowcase.tea.title"),
+      subtitle: "TEA SELECTION",
+      description: t("home.categoryShowcase.tea.description"),
+      image: heroTeaMountain,
+      link: "/tea",
+      stats: [
+        { label: t("home.categoryShowcase.tea.stats.0.label"), value: "8+" },
+        { label: t("home.categoryShowcase.tea.stats.1.label"), value: "50+" },
+        { label: t("home.categoryShowcase.tea.stats.2.label"), value: "20+" },
+      ],
+    },
+    {
+      id: "liquor",
+      title: t("home.categoryShowcase.liquor.title"),
+      subtitle: "LIQUOR COLLECTION",
+      description: t("home.categoryShowcase.liquor.description"),
+      image: heroLiquorCellar,
+      link: "/liquor",
+      stats: [
+        { label: t("home.categoryShowcase.liquor.stats.0.label"), value: "5+" },
+        { label: t("home.categoryShowcase.liquor.stats.1.label"), value: "30+" },
+        { label: t("home.categoryShowcase.liquor.stats.2.label"), value: t("home.categoryShowcase.liquor.stats.2.value") },
+      ],
+    },
+  ];
   return (
     <section className="py-24 bg-background">
       <div className="container mx-auto px-4 lg:px-8">

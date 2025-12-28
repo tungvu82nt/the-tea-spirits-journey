@@ -1,44 +1,46 @@
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import productPuerh from "@/assets/product-puerh-tea.jpg";
 import productBaijiu from "@/assets/product-baijiu.jpg";
 import giftSet from "@/assets/gift-set.jpg";
 
-const featuredProducts = [
-  {
-    id: 1,
-    name: "云南古树普洱",
-    subtitle: "2019年春茶 · 357g茶饼",
-    price: "¥1,280",
-    originalPrice: "¥1,580",
-    image: productPuerh,
-    category: "镇店之宝",
-    link: "/tea/puerh-ancient",
-  },
-  {
-    id: 2,
-    name: "酱香国韵",
-    subtitle: "15年窖藏 · 500ml",
-    price: "¥2,980",
-    originalPrice: null,
-    image: productBaijiu,
-    category: "新品上市",
-    link: "/liquor/maotai-15",
-  },
-  {
-    id: 3,
-    name: "茶酒双臻礼盒",
-    subtitle: "商务臻选 · 限量版",
-    price: "¥3,880",
-    originalPrice: "¥4,580",
-    image: giftSet,
-    category: "节日礼赠",
-    link: "/gifts/premium-set",
-  },
-];
-
 export function FeaturedProducts() {
+  const { t } = useTranslation();
+
+  const featuredProducts = [
+    {
+      id: 1,
+      name: t('home.products.puerh.name'),
+      subtitle: t('home.products.puerh.subtitle'),
+      price: "¥1,280",
+      originalPrice: "¥1,580",
+      image: productPuerh,
+      category: t('home.products.puerh.category'),
+      link: "/tea/puerh-ancient",
+    },
+    {
+      id: 2,
+      name: t('home.products.baijiu.name'),
+      subtitle: t('home.products.baijiu.subtitle'),
+      price: "¥2,980",
+      originalPrice: null,
+      image: productBaijiu,
+      category: t('home.products.baijiu.category'),
+      link: "/liquor/maotai-15",
+    },
+    {
+      id: 3,
+      name: t('home.products.giftSet.name'),
+      subtitle: t('home.products.giftSet.subtitle'),
+      price: "¥3,880",
+      originalPrice: "¥4,580",
+      image: giftSet,
+      category: t('home.products.giftSet.category'),
+      link: "/gifts/premium-set",
+    },
+  ];
   return (
     <section className="py-24 bg-gradient-cream">
       <div className="container mx-auto px-4 lg:px-8">
@@ -46,10 +48,10 @@ export function FeaturedProducts() {
         <div className="text-center mb-16">
           <p className="text-gold font-medium tracking-[0.2em] mb-3">FEATURED</p>
           <h2 className="font-display text-4xl md:text-5xl text-foreground mb-4">
-            臻选好物
+            {t('home.featured.title')}
           </h2>
           <p className="text-muted-foreground max-w-xl mx-auto">
-            每一件产品都经过严格甄选，只为呈现最纯粹的品质与韵味
+            {t('home.featured.subtitle')}
           </p>
         </div>
 
@@ -79,7 +81,7 @@ export function FeaturedProducts() {
                   {/* Quick View Overlay */}
                   <div className="absolute inset-0 bg-foreground/0 group-hover:bg-foreground/20 transition-colors duration-300 flex items-center justify-center">
                     <span className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-background text-foreground px-6 py-2 rounded-full text-sm font-medium">
-                      查看详情
+                      {t('home.featured.viewDetails')}
                     </span>
                   </div>
                 </div>
@@ -112,7 +114,7 @@ export function FeaturedProducts() {
         <div className="text-center mt-12">
           <Link to="/tea">
             <Button variant="elegant" size="lg">
-              探索更多产品
+              {t('home.featured.exploreMore')}
               <ArrowRight className="w-5 h-5" />
             </Button>
           </Link>

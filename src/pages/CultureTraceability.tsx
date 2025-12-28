@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
@@ -6,71 +7,85 @@ import { Input } from "@/components/ui/input";
 import { ChevronRight, Play, Search, Shield, MapPin, BookOpen, Camera, CheckCircle } from "lucide-react";
 import heroTeaMountain from "@/assets/hero-tea-mountain.jpg";
 
-const academyCourses = [
-  {
-    id: 1,
-    title: "普洱茶冲泡指南",
-    duration: "12分钟",
-    level: "入门",
-    thumbnail: heroTeaMountain,
-  },
-  {
-    id: 2,
-    title: "酱香酒品鉴方法",
-    duration: "15分钟",
-    level: "进阶",
-    thumbnail: heroTeaMountain,
-  },
-  {
-    id: 3,
-    title: "茶具养护技巧",
-    duration: "8分钟",
-    level: "入门",
-    thumbnail: heroTeaMountain,
-  },
-  {
-    id: 4,
-    title: "名酒收藏与储存",
-    duration: "20分钟",
-    level: "高级",
-    thumbnail: heroTeaMountain,
-  },
-];
-
-const origins = [
-  {
-    id: 1,
-    name: "云南·勐海",
-    type: "普洱茶基地",
-    description: "千年古茶树群落，班章老寨核心产区",
-    image: heroTeaMountain,
-    live: true,
-  },
-  {
-    id: 2,
-    name: "贵州·茅台镇",
-    type: "酱香酒窖",
-    description: "赤水河畔，国酒之乡的千年窖藏",
-    image: heroTeaMountain,
-    live: false,
-  },
-  {
-    id: 3,
-    name: "福建·武夷山",
-    type: "岩茶产区",
-    description: "世界自然与文化双遗产，大红袍原产地",
-    image: heroTeaMountain,
-    live: true,
-  },
-];
-
-const verifySteps = [
-  { step: 1, title: "扫描二维码", description: "使用手机扫描产品包装上的专属二维码" },
-  { step: 2, title: "输入防伪码", description: "输入产品标签上的16位防伪码" },
-  { step: 3, title: "查看结果", description: "获取产品完整信息及溯源数据" },
-];
-
 const CultureTraceability = () => {
+  const { t } = useTranslation();
+
+  const academyCourses = [
+    {
+      id: 1,
+      title: t("home.cultureTraceability.courses.1.title"),
+      duration: t("home.cultureTraceability.courses.1.duration"),
+      level: t("home.cultureTraceability.courses.1.level"),
+      thumbnail: heroTeaMountain,
+    },
+    {
+      id: 2,
+      title: t("home.cultureTraceability.courses.2.title"),
+      duration: t("home.cultureTraceability.courses.2.duration"),
+      level: t("home.cultureTraceability.courses.2.level"),
+      thumbnail: heroTeaMountain,
+    },
+    {
+      id: 3,
+      title: t("home.cultureTraceability.courses.3.title"),
+      duration: t("home.cultureTraceability.courses.3.duration"),
+      level: t("home.cultureTraceability.courses.3.level"),
+      thumbnail: heroTeaMountain,
+    },
+    {
+      id: 4,
+      title: t("home.cultureTraceability.courses.4.title"),
+      duration: t("home.cultureTraceability.courses.4.duration"),
+      level: t("home.cultureTraceability.courses.4.level"),
+      thumbnail: heroTeaMountain,
+    },
+  ];
+
+  const origins = [
+    {
+      id: 1,
+      name: t("home.cultureTraceability.origins.1.name"),
+      type: t("home.cultureTraceability.origins.1.type"),
+      description: t("home.cultureTraceability.origins.1.description"),
+      image: heroTeaMountain,
+      live: t("home.cultureTraceability.origins.1.live"),
+    },
+    {
+      id: 2,
+      name: t("home.cultureTraceability.origins.2.name"),
+      type: t("home.cultureTraceability.origins.2.type"),
+      description: t("home.cultureTraceability.origins.2.description"),
+      image: heroTeaMountain,
+      live: t("home.cultureTraceability.origins.2.live"),
+    },
+    {
+      id: 3,
+      name: t("home.cultureTraceability.origins.3.name"),
+      type: t("home.cultureTraceability.origins.3.type"),
+      description: t("home.cultureTraceability.origins.3.description"),
+      image: heroTeaMountain,
+      live: t("home.cultureTraceability.origins.3.live"),
+    },
+  ];
+
+  const verifySteps = [
+    { 
+      step: 1, 
+      title: t("home.cultureTraceability.verifySteps.1.title"), 
+      description: t("home.cultureTraceability.verifySteps.1.description") 
+    },
+    { 
+      step: 2, 
+      title: t("home.cultureTraceability.verifySteps.2.title"), 
+      description: t("home.cultureTraceability.verifySteps.2.description") 
+    },
+    { 
+      step: 3, 
+      title: t("home.cultureTraceability.verifySteps.3.title"), 
+      description: t("home.cultureTraceability.verifySteps.3.description") 
+    },
+  ];
+
   return (
     <div className="min-h-screen bg-background">
       <Header />
@@ -80,13 +95,13 @@ const CultureTraceability = () => {
         <section className="bg-gradient-hero text-primary-foreground py-20">
           <div className="container mx-auto px-4 lg:px-8">
             <nav className="flex items-center gap-2 text-sm text-primary-foreground/60 mb-6">
-              <Link to="/" className="hover:text-gold transition-colors">首页</Link>
+              <Link to="/" className="hover:text-gold transition-colors">{t("home.cultureTraceability.breadcrumbHome")}</Link>
               <ChevronRight className="w-4 h-4" />
-              <span className="text-gold">雅集溯源</span>
+              <span className="text-gold">{t("home.cultureTraceability.breadcrumbCurrent")}</span>
             </nav>
-            <h1 className="font-display text-5xl md:text-6xl mb-4">雅集溯源</h1>
+            <h1 className="font-display text-5xl md:text-6xl mb-4">{t("home.cultureTraceability.title")}</h1>
             <p className="text-xl text-primary-foreground/70 max-w-xl">
-              探索茶酒文化，追溯每一件产品的源头，了解匠心传承的故事
+              {t("home.cultureTraceability.description")}
             </p>
           </div>
         </section>
@@ -97,19 +112,19 @@ const CultureTraceability = () => {
             <div className="flex flex-wrap justify-center gap-4">
               <a href="#academy" className="px-6 py-3 bg-card rounded-full text-sm hover:bg-wine hover:text-primary-foreground transition-colors">
                 <BookOpen className="w-4 h-4 inline mr-2" />
-                品鉴学院
+                {t("home.cultureTraceability.academy")}
               </a>
               <a href="#verify" className="px-6 py-3 bg-card rounded-full text-sm hover:bg-wine hover:text-primary-foreground transition-colors">
                 <Shield className="w-4 h-4 inline mr-2" />
-                防伪溯源
+                {t("home.cultureTraceability.verify")}
               </a>
               <a href="#origins" className="px-6 py-3 bg-card rounded-full text-sm hover:bg-wine hover:text-primary-foreground transition-colors">
                 <MapPin className="w-4 h-4 inline mr-2" />
-                产地探访
+                {t("home.cultureTraceability.origins")}
               </a>
               <a href="#live" className="px-6 py-3 bg-card rounded-full text-sm hover:bg-wine hover:text-primary-foreground transition-colors">
                 <Camera className="w-4 h-4 inline mr-2" />
-                基地直播
+                {t("home.cultureTraceability.live")}
               </a>
             </div>
           </div>
@@ -120,9 +135,9 @@ const CultureTraceability = () => {
           <div className="container mx-auto px-4 lg:px-8">
             <div className="text-center mb-12">
               <p className="text-gold font-medium tracking-[0.2em] mb-3">ACADEMY</p>
-              <h2 className="font-display text-4xl text-foreground mb-4">品鉴学院</h2>
+              <h2 className="font-display text-4xl text-foreground mb-4">{t("home.cultureTraceability.academyTitle")}</h2>
               <p className="text-muted-foreground max-w-xl mx-auto">
-                专业视频教学，从入门到精通，带您领略茶酒文化的深厚底蕴
+                {t("home.cultureTraceability.academyDescription")}
               </p>
             </div>
 
@@ -167,13 +182,12 @@ const CultureTraceability = () => {
               <div>
                 <p className="text-gold font-medium tracking-[0.2em] mb-4">VERIFY</p>
                 <h2 className="font-display text-4xl mb-6 text-foreground">
-                  防伪溯源
+                  {t("home.cultureTraceability.verifyTitle")}
                   <br />
-                  <span className="text-wine">一瓶一码</span>
+                  <span className="text-wine">{t("home.cultureTraceability.verifyTitleHighlight")}</span>
                 </h2>
                 <p className="text-muted-foreground leading-relaxed mb-8">
-                  每一件产品都拥有专属的防伪码和二维码，您可以随时查验产品真伪，
-                  了解产品的完整生产链路，从原料到成品的每一个环节都有据可查。
+                  {t("home.cultureTraceability.verifyDescription")}
                 </p>
 
                 {/* Steps */}
@@ -196,25 +210,25 @@ const CultureTraceability = () => {
               <div className="bg-card rounded-2xl p-8 shadow-soft">
                 <div className="text-center mb-8">
                   <Shield className="w-16 h-16 text-wine mx-auto mb-4" />
-                  <h3 className="font-display text-2xl text-foreground mb-2">产品验真</h3>
-                  <p className="text-sm text-muted-foreground">输入16位防伪码查询产品信息</p>
+                  <h3 className="font-display text-2xl text-foreground mb-2">{t("home.cultureTraceability.productVerify")}</h3>
+                  <p className="text-sm text-muted-foreground">{t("home.cultureTraceability.verifyPlaceholder")}</p>
                 </div>
 
                 <div className="space-y-4">
                   <Input
-                    placeholder="请输入16位防伪码"
+                    placeholder={t("home.cultureTraceability.verifyPlaceholder")}
                     className="h-14 text-center text-lg tracking-widest"
                     maxLength={16}
                   />
                   <Button variant="wine" size="lg" className="w-full">
                     <Search className="w-5 h-5 mr-2" />
-                    立即查询
+                    {t("home.cultureTraceability.queryNow")}
                   </Button>
                 </div>
 
                 <div className="mt-6 p-4 bg-secondary rounded-lg">
                   <p className="text-sm text-muted-foreground text-center">
-                    防伪码位于产品包装内侧或瓶身标签上
+                    {t("home.cultureTraceability.verifyLocation")}
                   </p>
                 </div>
               </div>
@@ -227,9 +241,9 @@ const CultureTraceability = () => {
           <div className="container mx-auto px-4 lg:px-8">
             <div className="text-center mb-12">
               <p className="text-gold font-medium tracking-[0.2em] mb-3">ORIGINS</p>
-              <h2 className="font-display text-4xl text-foreground mb-4">产地探访</h2>
+              <h2 className="font-display text-4xl text-foreground mb-4">{t("home.cultureTraceability.originsTitle")}</h2>
               <p className="text-muted-foreground max-w-xl mx-auto">
-                深入原产地，探访每一片茶山、每一座酒窖背后的故事
+                {t("home.cultureTraceability.originsDescription")}
               </p>
             </div>
 
@@ -250,7 +264,7 @@ const CultureTraceability = () => {
                   {origin.live && (
                     <div className="absolute top-4 right-4 flex items-center gap-2 bg-destructive text-destructive-foreground px-3 py-1 rounded-full text-xs">
                       <span className="w-2 h-2 rounded-full bg-destructive-foreground animate-pulse" />
-                      直播中
+                      {t("home.cultureTraceability.live")}
                     </div>
                   )}
 
@@ -260,7 +274,7 @@ const CultureTraceability = () => {
                     <p className="text-primary-foreground/70 text-sm mb-4">{origin.description}</p>
                     <Button variant="hero" size="sm">
                       <Camera className="w-4 h-4 mr-2" />
-                      {origin.live ? "观看直播" : "查看详情"}
+                      {origin.live ? t("home.cultureTraceability.watchLive") : t("home.cultureTraceability.viewDetails")}
                     </Button>
                   </div>
                 </div>

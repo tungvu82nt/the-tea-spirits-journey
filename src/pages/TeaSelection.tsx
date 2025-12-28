@@ -1,96 +1,98 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
 import { ChevronRight, Filter, Grid3X3, LayoutList, MapPin } from "lucide-react";
 import productPuerh from "@/assets/product-puerh-tea.jpg";
 
-const categories = [
-  { id: "all", name: "全部茗茶" },
-  { id: "puerh", name: "普洱/黑茶" },
-  { id: "oolong", name: "乌龙/岩茶" },
-  { id: "green", name: "绿茶" },
-  { id: "red", name: "红茶" },
-  { id: "white", name: "白茶" },
-];
-
-const origins = [
-  { id: "all", name: "全部产区" },
-  { id: "yunnan", name: "云南" },
-  { id: "fujian", name: "福建" },
-  { id: "anhui", name: "安徽" },
-  { id: "zhejiang", name: "浙江" },
-  { id: "sichuan", name: "四川" },
-];
-
-const products = [
-  {
-    id: 1,
-    name: "班章古树普洱",
-    subtitle: "2018年春茶 · 357g茶饼",
-    price: "¥2,680",
-    origin: "云南 · 勐海",
-    category: "普洱茶",
-    image: productPuerh,
-    tag: "镇店之宝",
-  },
-  {
-    id: 2,
-    name: "大红袍母树",
-    subtitle: "武夷岩茶 · 250g",
-    price: "¥1,880",
-    origin: "福建 · 武夷山",
-    category: "岩茶",
-    image: productPuerh,
-    tag: "限量发售",
-  },
-  {
-    id: 3,
-    name: "明前龙井",
-    subtitle: "2024年头采 · 100g",
-    price: "¥980",
-    origin: "浙江 · 西湖",
-    category: "绿茶",
-    image: productPuerh,
-    tag: "新品",
-  },
-  {
-    id: 4,
-    name: "老白茶饼",
-    subtitle: "2015年陈化 · 350g",
-    price: "¥1,580",
-    origin: "福建 · 福鼎",
-    category: "白茶",
-    image: productPuerh,
-    tag: null,
-  },
-  {
-    id: 5,
-    name: "金骏眉",
-    subtitle: "桐木关正山 · 150g",
-    price: "¥1,280",
-    origin: "福建 · 武夷山",
-    category: "红茶",
-    image: productPuerh,
-    tag: "热销",
-  },
-  {
-    id: 6,
-    name: "冰岛古树",
-    subtitle: "2019年春茶 · 200g",
-    price: "¥3,580",
-    origin: "云南 · 临沧",
-    category: "普洱茶",
-    image: productPuerh,
-    tag: "收藏级",
-  },
-];
-
 const TeaSelection = () => {
+  const { t } = useTranslation();
   const [activeCategory, setActiveCategory] = useState("all");
   const [activeOrigin, setActiveOrigin] = useState("all");
   const [viewMode, setViewMode] = useState<"grid" | "list">("grid");
+
+  const categories = [
+    { id: "all", name: t("home.teaSelection.categories.all") },
+    { id: "puerh", name: t("home.teaSelection.categories.puerh") },
+    { id: "oolong", name: t("home.teaSelection.categories.oolong") },
+    { id: "green", name: t("home.teaSelection.categories.green") },
+    { id: "red", name: t("home.teaSelection.categories.red") },
+    { id: "white", name: t("home.teaSelection.categories.white") },
+  ];
+
+  const origins = [
+    { id: "all", name: t("home.teaSelection.origins.all") },
+    { id: "yunnan", name: t("home.teaSelection.origins.yunnan") },
+    { id: "fujian", name: t("home.teaSelection.origins.fujian") },
+    { id: "anhui", name: t("home.teaSelection.origins.anhui") },
+    { id: "zhejiang", name: t("home.teaSelection.origins.zhejiang") },
+    { id: "sichuan", name: t("home.teaSelection.origins.sichuan") },
+  ];
+
+  const products = [
+    {
+      id: 1,
+      name: t("home.teaSelection.products.1.name"),
+      subtitle: t("home.teaSelection.products.1.subtitle"),
+      price: t("home.teaSelection.products.1.price"),
+      origin: t("home.teaSelection.products.1.origin"),
+      category: t("home.teaSelection.products.1.category"),
+      image: productPuerh,
+      tag: t("home.teaSelection.products.1.tag"),
+    },
+    {
+      id: 2,
+      name: t("home.teaSelection.products.2.name"),
+      subtitle: t("home.teaSelection.products.2.subtitle"),
+      price: t("home.teaSelection.products.2.price"),
+      origin: t("home.teaSelection.products.2.origin"),
+      category: t("home.teaSelection.products.2.category"),
+      image: productPuerh,
+      tag: t("home.teaSelection.products.2.tag"),
+    },
+    {
+      id: 3,
+      name: t("home.teaSelection.products.3.name"),
+      subtitle: t("home.teaSelection.products.3.subtitle"),
+      price: t("home.teaSelection.products.3.price"),
+      origin: t("home.teaSelection.products.3.origin"),
+      category: t("home.teaSelection.products.3.category"),
+      image: productPuerh,
+      tag: t("home.teaSelection.products.3.tag"),
+    },
+    {
+      id: 4,
+      name: t("home.teaSelection.products.4.name"),
+      subtitle: t("home.teaSelection.products.4.subtitle"),
+      price: t("home.teaSelection.products.4.price"),
+      origin: t("home.teaSelection.products.4.origin"),
+      category: t("home.teaSelection.products.4.category"),
+      image: productPuerh,
+      tag: t("home.teaSelection.products.4.tag"),
+    },
+    {
+      id: 5,
+      name: t("home.teaSelection.products.5.name"),
+      subtitle: t("home.teaSelection.products.5.subtitle"),
+      price: t("home.teaSelection.products.5.price"),
+      origin: t("home.teaSelection.products.5.origin"),
+      category: t("home.teaSelection.products.5.category"),
+      image: productPuerh,
+      tag: t("home.teaSelection.products.5.tag"),
+    },
+    {
+      id: 6,
+      name: t("home.teaSelection.products.6.name"),
+      subtitle: t("home.teaSelection.products.6.subtitle"),
+      price: t("home.teaSelection.products.6.price"),
+      origin: t("home.teaSelection.products.6.origin"),
+      category: t("home.teaSelection.products.6.category"),
+      image: productPuerh,
+      tag: t("home.teaSelection.products.6.tag"),
+    },
+  ];
 
   return (
     <div className="min-h-screen bg-background">
@@ -101,13 +103,13 @@ const TeaSelection = () => {
         <section className="bg-gradient-hero text-primary-foreground py-20">
           <div className="container mx-auto px-4 lg:px-8">
             <nav className="flex items-center gap-2 text-sm text-primary-foreground/60 mb-6">
-              <Link to="/" className="hover:text-gold transition-colors">首页</Link>
+              <Link to="/" className="hover:text-gold transition-colors">{t("home.teaSelection.breadcrumbHome")}</Link>
               <ChevronRight className="w-4 h-4" />
-              <span className="text-gold">茗茶萃取</span>
+              <span className="text-gold">{t("home.teaSelection.breadcrumbCurrent")}</span>
             </nav>
-            <h1 className="font-display text-5xl md:text-6xl mb-4">茗茶萃取</h1>
+            <h1 className="font-display text-5xl md:text-6xl mb-4">{t("home.teaSelection.title")}</h1>
             <p className="text-xl text-primary-foreground/70 max-w-xl">
-              从云南古树到武夷岩韵，精选中华名茶，品味千年茶道
+              {t("home.teaSelection.description")}
             </p>
           </div>
         </section>
@@ -225,7 +227,7 @@ const TeaSelection = () => {
             {/* Load More */}
             <div className="text-center mt-12">
               <Button variant="outline" size="lg">
-                加载更多
+                {t("home.teaSelection.loadMore")}
               </Button>
             </div>
           </div>

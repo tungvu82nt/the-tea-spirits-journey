@@ -1,20 +1,24 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, ShoppingBag, User, Search } from "lucide-react";
+import { useTranslation } from "react-i18next";
 import { Button } from "@/components/ui/button";
+import { ThemeToggle } from "@/components/ui/theme-toggle";
+import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import { cn } from "@/lib/utils";
 
 const navigation = [
-  { name: "首页", href: "/" },
-  { name: "茗茶萃取", href: "/tea" },
-  { name: "佳酿陈列", href: "/liquor" },
-  { name: "礼赠中心", href: "/gifts" },
-  { name: "雅集溯源", href: "/culture" },
+  { name: "nav.home", href: "/" },
+  { name: "nav.tea", href: "/tea" },
+  { name: "nav.liquor", href: "/liquor" },
+  { name: "nav.about", href: "/about" },
+  { name: "nav.contact", href: "/contact" },
 ];
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const location = useLocation();
+  const { t } = useTranslation();
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border/50">
@@ -45,13 +49,15 @@ export function Header() {
                   : "text-foreground"
               )}
             >
-              {item.name}
+              {t(item.name as any)}
             </Link>
           ))}
         </div>
 
         {/* Desktop Actions */}
         <div className="hidden lg:flex items-center gap-4">
+          <LanguageSwitcher />
+          <ThemeToggle />
           <Button variant="ghost" size="icon">
             <Search className="w-5 h-5" />
           </Button>
@@ -61,7 +67,7 @@ export function Header() {
           <Link to="/account">
             <Button variant="wine" size="sm">
               <User className="w-4 h-4" />
-              <span>我的账户</span>
+              <span>{t("nav.account")}</span>
             </Button>
           </Link>
         </div>
@@ -93,18 +99,20 @@ export function Header() {
                 )}
                 onClick={() => setMobileMenuOpen(false)}
               >
-                {item.name}
+                {t(item.name as any)}
               </Link>
             ))}
             <div className="pt-4 border-t border-border flex gap-4">
+              <LanguageSwitcher />
+              <ThemeToggle />
               <Button variant="outline" size="sm" className="flex-1">
                 <ShoppingBag className="w-4 h-4 mr-2" />
-                购物车
+                {t("nav.cart")}
               </Button>
               <Link to="/account" className="flex-1">
                 <Button variant="wine" size="sm" className="w-full">
                   <User className="w-4 h-4 mr-2" />
-                  账户
+                  {t("nav.account")}
                 </Button>
               </Link>
             </div>

@@ -1,39 +1,41 @@
+import { useTranslation } from "react-i18next";
 import { Shield, Truck, Headphones, Gift, Award, RefreshCw } from "lucide-react";
 
-const services = [
-  {
-    icon: Shield,
-    title: "正品保障",
-    description: "一瓶一码防伪溯源",
-  },
-  {
-    icon: Truck,
-    title: "顺丰直达",
-    description: "全国包邮 · 急速送达",
-  },
-  {
-    icon: Headphones,
-    title: "专属管家",
-    description: "1对1 VIP专线服务",
-  },
-  {
-    icon: Gift,
-    title: "精美包装",
-    description: "礼盒定制 · 尊享体验",
-  },
-  {
-    icon: Award,
-    title: "品质承诺",
-    description: "百年老字号合作授权",
-  },
-  {
-    icon: RefreshCw,
-    title: "无忧退换",
-    description: "7天无理由退换货",
-  },
-];
-
 export function ServicesSection() {
+  const { t } = useTranslation();
+
+  const services = [
+    {
+      icon: Shield,
+      title: t('home.services.authentic'),
+      description: t('home.services.authenticDesc'),
+    },
+    {
+      icon: Truck,
+      title: t('home.services.delivery'),
+      description: t('home.services.deliveryDesc'),
+    },
+    {
+      icon: Headphones,
+      title: t('home.services.support'),
+      description: t('home.services.supportDesc'),
+    },
+    {
+      icon: Gift,
+      title: t('home.services.packaging'),
+      description: t('home.services.packagingDesc'),
+    },
+    {
+      icon: Award,
+      title: t('home.services.quality'),
+      description: t('home.services.qualityDesc'),
+    },
+    {
+      icon: RefreshCw,
+      title: t('home.services.returns'),
+      description: t('home.services.returnsDesc'),
+    },
+  ];
   return (
     <section className="py-20 bg-secondary">
       <div className="container mx-auto px-4 lg:px-8">
