@@ -591,3 +591,5 @@ export const Orders = (): JSX.Element => {
     </div>
   );
 };
+
+export default Orders;

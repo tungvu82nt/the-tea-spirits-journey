@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Bell, Search, User, LogOut, ChevronDown, Settings } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';

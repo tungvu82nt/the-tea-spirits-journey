@@ -7,7 +7,7 @@ import { cn } from '@/lib/utils';
 export type SortDirection = 'asc' | 'desc' | null;
 
 export interface Column<T> {
-  key: keyof T;
+  key: keyof T | string;
   title: string;
   sortable?: boolean;
   filterable?: boolean;

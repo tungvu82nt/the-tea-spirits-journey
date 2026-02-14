@@ -100,6 +100,7 @@ const categories = [
 ];
 
 const ProductForm = (): JSX.Element => {
+  const { t } = useTranslation();
   const navigate = useNavigate();
   const { id } = useParams<{ id: string }>();
   const isEditing = !!id;

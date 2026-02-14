@@ -41,7 +41,7 @@ export interface Customer {
   tags?: string[];
 }
 
-const mockCustomers: Customer[] = [
+export const mockCustomers: Customer[] = [
   {
     id: '1',
     firstName: 'Nguyễn',
@@ -626,3 +626,5 @@ export const Customers = (): JSX.Element => {
     </div>
   );
 };
+
+export default Customers;

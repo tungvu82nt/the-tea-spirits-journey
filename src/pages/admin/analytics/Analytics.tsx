@@ -1,4 +1,5 @@
 import { useState, useMemo } from 'react';
+import { useTranslation } from 'react-i18next';
 import {
   TrendingUp,
   TrendingDown,
@@ -68,6 +69,7 @@ const mockTopCustomers: TopCustomer[] = [
 ];
 
 export const Analytics = (): JSX.Element => {
+  const { t } = useTranslation();
   const [dateRange, setDateRange] = useState<'7d' | '30d' | '90d' | '1y'>('30d');
   const [loading, setLoading] = useState(false);
 
@@ -358,3 +360,5 @@ export const Analytics = (): JSX.Element => {
     </div>
   );
 };
+
+export default Analytics;

@@ -24,7 +24,8 @@ import { Button } from '@/components/ui/button';
 import { Breadcrumbs } from '@/components/admin/Breadcrumbs';
 import { DataTable } from '@/components/admin/DataTable';
 import { cn } from '@/lib/utils';
-import { Customer, CustomerStatus } from './Customers';
+import { Customer, CustomerStatus, mockCustomers } from './Customers';
+import { Order } from '../orders/Orders';
 import { showUndoToast } from '@/lib/undo';
 
 export const CustomerDetail = (): JSX.Element => {
@@ -169,7 +170,7 @@ ${customer.notes || t('admin.customerDetail.noNotes')}
     );
   }
 
-  const orders = mockOrders[customer.id] || [];
+  const orders: Order[] = [];
   const statusConfigCurrent = statusConfig[customer.status];
 
   const orderColumns = [
@@ -634,3 +635,5 @@ ${customer.notes || t('admin.customerDetail.noNotes')}
     </div>
   );
 };
+
+export default CustomerDetail;

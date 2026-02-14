@@ -858,3 +858,5 @@ ${t('admin.orderDetail.statusLabel')}: ${statusConfig[order.status].label}
     </div>
   );
 };
+
+export default OrderDetail;
