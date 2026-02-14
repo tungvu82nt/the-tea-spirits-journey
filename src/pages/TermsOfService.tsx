@@ -26,7 +26,7 @@ const TermsOfService = () => {
             {t("termsOfService.acceptance.title")}
           </h2>
           <div className="space-y-4 text-muted-foreground">
-            {t("termsOfService.acceptance.description", { returnObjects: true }).map((desc: string, index: number) => (
+            {(t("termsOfService.acceptance.description", { returnObjects: true }) as string[]).map((desc: string, index: number) => (
               <p key={index}>{desc}</p>
             ))}
           </div>
@@ -44,7 +44,7 @@ const TermsOfService = () => {
               {t("termsOfService.serviceDescription.description")}
             </p>
             <ul className="list-disc list-inside space-y-2">
-              {t("termsOfService.serviceDescription.features", { returnObjects: true }).map((feature: string, index: number) => (
+              {(t("termsOfService.serviceDescription.features", { returnObjects: true }) as string[]).map((feature: string, index: number) => (
                 <li key={index}>{feature}</li>
               ))}
             </ul>
@@ -66,11 +66,11 @@ const TermsOfService = () => {
               {t("termsOfService.userAccount.description")}
             </p>
             <ul className="list-disc list-inside space-y-2">
-              {t("termsOfService.userAccount.agreements", { returnObjects: true }).map((agreement: string, index: number) => (
+              {(t("termsOfService.userAccount.agreements", { returnObjects: true }) as string[]).map((agreement: string, index: number) => (
                 <li key={index}>{agreement}</li>
               ))}
             </ul>
-            {t("termsOfService.userAccount.restrictions", { returnObjects: true }).map((restriction: string, index: number) => (
+            {(t("termsOfService.userAccount.restrictions", { returnObjects: true }) as string[]).map((restriction: string, index: number) => (
               <p key={index}>{restriction}</p>
             ))}
           </div>
@@ -85,7 +85,7 @@ const TermsOfService = () => {
               {t("termsOfService.productInformation.description")}
             </p>
             <ul className="list-disc list-inside space-y-2">
-              {t("termsOfService.productInformation.disclaimers", { returnObjects: true }).map((disclaimer: string, index: number) => (
+              {(t("termsOfService.productInformation.disclaimers", { returnObjects: true }) as string[]).map((disclaimer: string, index: number) => (
                 <li key={index}>{disclaimer}</li>
               ))}
             </ul>
@@ -101,7 +101,7 @@ const TermsOfService = () => {
               {t("termsOfService.ordersAndPayment.description")}
             </p>
             <ul className="list-disc list-inside space-y-2">
-              {t("termsOfService.ordersAndPayment.terms", { returnObjects: true }).map((term: string, index: number) => (
+              {(t("termsOfService.ordersAndPayment.terms", { returnObjects: true }) as string[]).map((term: string, index: number) => (
                 <li key={index}>{term}</li>
               ))}
             </ul>
@@ -120,7 +120,7 @@ const TermsOfService = () => {
               {t("termsOfService.shippingAndDelivery.description")}
             </p>
             <ul className="list-disc list-inside space-y-2">
-              {t("termsOfService.shippingAndDelivery.terms", { returnObjects: true }).map((term: string, index: number) => (
+              {(t("termsOfService.shippingAndDelivery.terms", { returnObjects: true }) as string[]).map((term: string, index: number) => (
                 <li key={index}>{term}</li>
               ))}
             </ul>
@@ -139,7 +139,7 @@ const TermsOfService = () => {
               {t("termsOfService.returnPolicy.description")}
             </p>
             <ul className="list-disc list-inside space-y-2">
-              {t("termsOfService.returnPolicy.terms", { returnObjects: true }).map((term: string, index: number) => (
+              {(t("termsOfService.returnPolicy.terms", { returnObjects: true }) as string[]).map((term: string, index: number) => (
                 <li key={index}>{term}</li>
               ))}
             </ul>
@@ -161,7 +161,7 @@ const TermsOfService = () => {
               {t("termsOfService.userConduct.description")}
             </p>
             <ul className="list-disc list-inside space-y-2">
-              {t("termsOfService.userConduct.prohibitions", { returnObjects: true }).map((prohibition: string, index: number) => (
+              {(t("termsOfService.userConduct.prohibitions", { returnObjects: true }) as string[]).map((prohibition: string, index: number) => (
                 <li key={index}>{prohibition}</li>
               ))}
             </ul>
@@ -180,7 +180,7 @@ const TermsOfService = () => {
               {t("termsOfService.intellectualProperty.description")}
             </p>
             <ul className="list-disc list-inside space-y-2">
-              {t("termsOfService.intellectualProperty.rights", { returnObjects: true }).map((right: string, index: number) => (
+              {(t("termsOfService.intellectualProperty.rights", { returnObjects: true }) as string[]).map((right: string, index: number) => (
                 <li key={index}>{right}</li>
               ))}
             </ul>
@@ -196,7 +196,7 @@ const TermsOfService = () => {
               {t("termsOfService.disclaimer.description")}
             </p>
             <ul className="list-disc list-inside space-y-2">
-              {t("termsOfService.disclaimer.disclaimers", { returnObjects: true }).map((disclaimer: string, index: number) => (
+              {(t("termsOfService.disclaimer.disclaimers", { returnObjects: true }) as string[]).map((disclaimer: string, index: number) => (
                 <li key={index}>{disclaimer}</li>
               ))}
             </ul>
@@ -212,7 +212,7 @@ const TermsOfService = () => {
               {t("termsOfService.limitationOfLiability.description")}
             </p>
             <ul className="list-disc list-inside space-y-2">
-              {t("termsOfService.limitationOfLiability.exclusions", { returnObjects: true }).map((exclusion: string, index: number) => (
+              {(t("termsOfService.limitationOfLiability.exclusions", { returnObjects: true }) as string[]).map((exclusion: string, index: number) => (
                 <li key={index}>{exclusion}</li>
               ))}
             </ul>
@@ -234,7 +234,7 @@ const TermsOfService = () => {
               {t("termsOfService.disputeResolution.description")}
             </p>
             <ul className="list-disc list-inside space-y-2">
-              {t("termsOfService.disputeResolution.terms", { returnObjects: true }).map((term: string, index: number) => (
+              {(t("termsOfService.disputeResolution.terms", { returnObjects: true }) as string[]).map((term: string, index: number) => (
                 <li key={index}>{term}</li>
               ))}
             </ul>
@@ -250,7 +250,7 @@ const TermsOfService = () => {
               {t("termsOfService.termsChanges.description")}
             </p>
             <ul className="list-disc list-inside space-y-2">
-              {t("termsOfService.termsChanges.terms", { returnObjects: true }).map((term: string, index: number) => (
+              {(t("termsOfService.termsChanges.terms", { returnObjects: true }) as string[]).map((term: string, index: number) => (
                 <li key={index}>{term}</li>
               ))}
             </ul>
@@ -265,7 +265,7 @@ const TermsOfService = () => {
             {t("termsOfService.severability.title")}
           </h2>
           <div className="space-y-4 text-muted-foreground">
-            {t("termsOfService.severability.description", { returnObjects: true }).map((desc: string, index: number) => (
+            {(t("termsOfService.severability.description", { returnObjects: true }) as string[]).map((desc: string, index: number) => (
               <p key={index}>{desc}</p>
             ))}
           </div>
@@ -280,7 +280,7 @@ const TermsOfService = () => {
               {t("termsOfService.entireAgreement.description")}
             </p>
             <ul className="list-disc list-inside space-y-2">
-              {t("termsOfService.entireAgreement.terms", { returnObjects: true }).map((term: string, index: number) => (
+              {(t("termsOfService.entireAgreement.terms", { returnObjects: true }) as string[]).map((term: string, index: number) => (
                 <li key={index}>{term}</li>
               ))}
             </ul>

@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 import { Plus, Edit, Trash2, FolderTree, Search, MoreVertical } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -104,6 +105,7 @@ const mockCategories: Category[] = [
 ];
 
 const CategoryManagement = (): JSX.Element => {
+  const { t } = useTranslation();
   const navigate = useNavigate();
   const [categories, setCategories] = useState<Category[]>(mockCategories);
   const [searchTerm, setSearchTerm] = useState('');

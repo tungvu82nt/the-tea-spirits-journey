@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 import { Package, AlertTriangle, TrendingUp, TrendingDown, Search, Filter, Plus, Edit } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -144,6 +145,7 @@ const mockInventory: InventoryItem[] = [
 ];
 
 const InventoryManagement = (): JSX.Element => {
+  const { t } = useTranslation();
   const navigate = useNavigate();
   const [inventory, setInventory] = useState<InventoryItem[]>(mockInventory);
   const [selectedIds, setSelectedIds] = useState<string[]>([]);

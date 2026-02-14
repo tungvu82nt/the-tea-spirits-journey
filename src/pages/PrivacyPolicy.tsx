@@ -44,7 +44,7 @@ const PrivacyPolicy = () => {
             <div>
               <h3 className="font-medium text-foreground mb-3">{t("privacyPolicy.informationWeCollect.personalInfo.title")}</h3>
               <ul className="list-disc list-inside space-y-2 text-muted-foreground">
-                {t("privacyPolicy.informationWeCollect.personalInfo.items", { returnObjects: true }).map((item: string, index: number) => (
+                {(t("privacyPolicy.informationWeCollect.personalInfo.items", { returnObjects: true }) as string[]).map((item: string, index: number) => (
                   <li key={index}>{item}</li>
                 ))}
               </ul>
@@ -52,7 +52,7 @@ const PrivacyPolicy = () => {
             <div>
               <h3 className="font-medium text-foreground mb-3">{t("privacyPolicy.informationWeCollect.usageInfo.title")}</h3>
               <ul className="list-disc list-inside space-y-2 text-muted-foreground">
-                {t("privacyPolicy.informationWeCollect.usageInfo.items", { returnObjects: true }).map((item: string, index: number) => (
+                {(t("privacyPolicy.informationWeCollect.usageInfo.items", { returnObjects: true }) as string[]).map((item: string, index: number) => (
                   <li key={index}>{item}</li>
                 ))}
               </ul>
@@ -60,7 +60,7 @@ const PrivacyPolicy = () => {
             <div>
               <h3 className="font-medium text-foreground mb-3">{t("privacyPolicy.informationWeCollect.deviceInfo.title")}</h3>
               <ul className="list-disc list-inside space-y-2 text-muted-foreground">
-                {t("privacyPolicy.informationWeCollect.deviceInfo.items", { returnObjects: true }).map((item: string, index: number) => (
+                {(t("privacyPolicy.informationWeCollect.deviceInfo.items", { returnObjects: true }) as string[]).map((item: string, index: number) => (
                   <li key={index}>{item}</li>
                 ))}
               </ul>
@@ -78,7 +78,7 @@ const PrivacyPolicy = () => {
           <div className="space-y-4 text-muted-foreground">
             <p>{t("privacyPolicy.informationUsage.description")}</p>
             <ul className="list-disc list-inside space-y-2">
-              {t("privacyPolicy.informationUsage.purposes", { returnObjects: true }).map((purpose: string, index: number) => (
+              {(t("privacyPolicy.informationUsage.purposes", { returnObjects: true }) as string[]).map((purpose: string, index: number) => (
                 <li key={index}><strong>{purpose.split(":")[0]}:</strong>{purpose.split(":")[1]}</li>
               ))}
             </ul>
@@ -95,7 +95,7 @@ const PrivacyPolicy = () => {
           <div className="space-y-4 text-muted-foreground">
             <p>{t("privacyPolicy.informationSharing.description")}</p>
             <ul className="list-disc list-inside space-y-2">
-              {t("privacyPolicy.informationSharing.cases", { returnObjects: true }).map((caseItem: string, index: number) => (
+              {(t("privacyPolicy.informationSharing.cases", { returnObjects: true }) as string[]).map((caseItem: string, index: number) => (
                 <li key={index}><strong>{caseItem.split(":")[0]}:</strong>{caseItem.split(":")[1]}</li>
               ))}
             </ul>
@@ -115,7 +115,7 @@ const PrivacyPolicy = () => {
           <div className="space-y-4 text-muted-foreground">
             <p>{t("privacyPolicy.yourRights.description")}</p>
             <ul className="list-disc list-inside space-y-2">
-              {t("privacyPolicy.yourRights.rights", { returnObjects: true }).map((right: string, index: number) => (
+              {(t("privacyPolicy.yourRights.rights", { returnObjects: true }) as string[]).map((right: string, index: number) => (
                 <li key={index}><strong>{right.split(":")[0]}:</strong>{right.split(":")[1]}</li>
               ))}
             </ul>
@@ -135,7 +135,7 @@ const PrivacyPolicy = () => {
           <div className="space-y-4 text-muted-foreground">
             <p>{t("privacyPolicy.dataSecurity.description")}</p>
             <ul className="list-disc list-inside space-y-2">
-              {t("privacyPolicy.dataSecurity.measures", { returnObjects: true }).map((measure: string, index: number) => (
+              {(t("privacyPolicy.dataSecurity.measures", { returnObjects: true }) as string[]).map((measure: string, index: number) => (
                 <li key={index}>{measure}</li>
               ))}
             </ul>
@@ -154,7 +154,7 @@ const PrivacyPolicy = () => {
               {t("privacyPolicy.cookiePolicy.description")}
             </p>
             <ul className="list-disc list-inside space-y-2">
-              {t("privacyPolicy.cookiePolicy.types", { returnObjects: true }).map((type: string, index: number) => (
+              {(t("privacyPolicy.cookiePolicy.types", { returnObjects: true }) as string[]).map((type: string, index: number) => (
                 <li key={index}><strong>{type.split(":")[0]}:</strong>{type.split(":")[1]}</li>
               ))}
             </ul>
@@ -169,7 +169,7 @@ const PrivacyPolicy = () => {
             {t("privacyPolicy.childrenPrivacy.title")}
           </h2>
           <div className="space-y-4 text-muted-foreground">
-            {t("privacyPolicy.childrenPrivacy.description", { returnObjects: true }).map((desc: string, index: number) => (
+            {(t("privacyPolicy.childrenPrivacy.description", { returnObjects: true }) as string[]).map((desc: string, index: number) => (
               <p key={index}>{desc}</p>
             ))}
           </div>
@@ -180,7 +180,7 @@ const PrivacyPolicy = () => {
             {t("privacyPolicy.policyChanges.title")}
           </h2>
           <div className="space-y-4 text-muted-foreground">
-            {t("privacyPolicy.policyChanges.description", { returnObjects: true }).map((desc: string, index: number) => (
+            {(t("privacyPolicy.policyChanges.description", { returnObjects: true }) as string[]).map((desc: string, index: number) => (
               <p key={index}>{desc}</p>
             ))}
           </div>

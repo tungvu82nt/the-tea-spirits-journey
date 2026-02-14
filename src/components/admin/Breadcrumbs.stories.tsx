@@ -16,7 +16,7 @@ type Story = StoryObj<typeof Breadcrumbs>;
 export const SingleLevel: Story = {
   args: {
     items: [
-      { label: 'Trang chủ', href: '/admin' },
+      { label: 'Trang chủ', path: '/admin' },
     ],
   },
 };
@@ -24,8 +24,8 @@ export const SingleLevel: Story = {
 export const TwoLevels: Story = {
   args: {
     items: [
-      { label: 'Trang chủ', href: '/admin' },
-      { label: 'Sản phẩm', href: '/admin/products' },
+      { label: 'Trang chủ', path: '/admin' },
+      { label: 'Sản phẩm', path: '/admin/products' },
     ],
   },
 };
@@ -33,9 +33,9 @@ export const TwoLevels: Story = {
 export const ThreeLevels: Story = {
   args: {
     items: [
-      { label: 'Trang chủ', href: '/admin' },
-      { label: 'Sản phẩm', href: '/admin/products' },
-      { label: 'Chi tiết sản phẩm', href: '/admin/products/123' },
+      { label: 'Trang chủ', path: '/admin' },
+      { label: 'Sản phẩm', path: '/admin/products' },
+      { label: 'Chi tiết sản phẩm', path: '/admin/products/123' },
     ],
   },
 };
@@ -43,10 +43,10 @@ export const ThreeLevels: Story = {
 export const FourLevels: Story = {
   args: {
     items: [
-      { label: 'Trang chủ', href: '/admin' },
-      { label: 'Sản phẩm', href: '/admin/products' },
-      { label: 'Danh mục', href: '/admin/products/categories' },
-      { label: 'Trà đạo', href: '/admin/products/categories/tea' },
+      { label: 'Trang chủ', path: '/admin' },
+      { label: 'Sản phẩm', path: '/admin/products' },
+      { label: 'Danh mục', path: '/admin/products/categories' },
+      { label: 'Trà đạo', path: '/admin/products/categories/tea' },
     ],
   },
 };
@@ -54,9 +54,9 @@ export const FourLevels: Story = {
 export const WithActiveItem: Story = {
   args: {
     items: [
-      { label: 'Trang chủ', href: '/admin' },
-      { label: 'Đơn hàng', href: '/admin/orders' },
-      { label: 'Chi tiết đơn hàng', active: true },
+      { label: 'Trang chủ', path: '/admin' },
+      { label: 'Đơn hàng', path: '/admin/orders' },
+      { label: 'Chi tiết đơn hàng' },
     ],
   },
 };
@@ -64,8 +64,8 @@ export const WithActiveItem: Story = {
 export const DashboardPath: Story = {
   args: {
     items: [
-      { label: 'Trang chủ', href: '/admin' },
-      { label: 'Tổng quan', active: true },
+      { label: 'Trang chủ', path: '/admin' },
+      { label: 'Tổng quan' },
     ],
   },
 };
@@ -73,9 +73,9 @@ export const DashboardPath: Story = {
 export const ProductsPath: Story = {
   args: {
     items: [
-      { label: 'Trang chủ', href: '/admin' },
-      { label: 'Sản phẩm', href: '/admin/products' },
-      { label: 'Danh sách sản phẩm', active: true },
+      { label: 'Trang chủ', path: '/admin' },
+      { label: 'Sản phẩm', path: '/admin/products' },
+      { label: 'Danh sách sản phẩm' },
     ],
   },
 };
@@ -83,9 +83,9 @@ export const ProductsPath: Story = {
 export const OrdersPath: Story = {
   args: {
     items: [
-      { label: 'Trang chủ', href: '/admin' },
-      { label: 'Đơn hàng', href: '/admin/orders' },
-      { label: 'Chi tiết đơn hàng #12345', active: true },
+      { label: 'Trang chủ', path: '/admin' },
+      { label: 'Đơn hàng', path: '/admin/orders' },
+      { label: 'Chi tiết đơn hàng #12345' },
     ],
   },
 };
@@ -93,9 +93,9 @@ export const OrdersPath: Story = {
 export const CustomersPath: Story = {
   args: {
     items: [
-      { label: 'Trang chủ', href: '/admin' },
-      { label: 'Khách hàng', href: '/admin/customers' },
-      { label: 'Chi tiết khách hàng', active: true },
+      { label: 'Trang chủ', path: '/admin' },
+      { label: 'Khách hàng', path: '/admin/customers' },
+      { label: 'Chi tiết khách hàng' },
     ],
   },
 };
@@ -103,9 +103,9 @@ export const CustomersPath: Story = {
 export const SettingsPath: Story = {
   args: {
     items: [
-      { label: 'Trang chủ', href: '/admin' },
-      { label: 'Cài đặt', href: '/admin/settings' },
-      { label: 'Cài đặt chung', active: true },
+      { label: 'Trang chủ', path: '/admin' },
+      { label: 'Cài đặt', path: '/admin/settings' },
+      { label: 'Cài đặt chung' },
     ],
   },
 };

@@ -816,3 +816,5 @@ export const Settings = (): JSX.Element => {
     </div>
   );
 };
+
+export default Settings;
