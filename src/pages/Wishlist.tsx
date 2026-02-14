@@ -492,6 +492,7 @@ const Wishlist = () => {
                     />
                   </div>
                 )}
+                </SectionErrorBoundary>
               </TabsContent>
             </Tabs>
           </div>

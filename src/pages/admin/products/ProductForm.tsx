@@ -15,39 +15,29 @@ import { Switch } from '@/components/ui/switch';
 import { Badge } from '@/components/ui/badge';
 import { toast } from 'sonner';
 
-const ProductForm = (): JSX.Element => {
-  const { t } = useTranslation();
-  const navigate = useNavigate();
-  const { id } = useParams<{ id: string }>();
-  const isEditing = !!id;
-  const [loading, setLoading] = useState(false);
-  const [product, setProduct] = useState<Product | null>(null);
-  const [images, setImages] = useState<string[]>([]);
-  const [tagInput, setTagInput] = useState('');
+const productSchema = z.object({
+  name: z.string().min(1, 'Name is required').max(200, 'Name too long'),
+  sku: z.string().min(1, 'SKU is required').max(50, 'SKU too long'),
+  category: z.string().min(1, 'Category is required'),
+  price: z.number().min(0, 'Price must be positive'),
+  comparePrice: z.number().min(0, 'Price must be positive').optional(),
+  costPrice: z.number().min(0, 'Price must be positive').optional(),
+  stock: z.number().int().min(0, 'Stock must be positive'),
+  lowStockThreshold: z.number().int().min(0, 'Threshold must be positive'),
+  status: z.enum(['active', 'inactive', 'draft']),
+  description: z.string().max(2000, 'Description too long').optional(),
+  shortDescription: z.string().max(500, 'Short description too long').optional(),
+  weight: z.number().min(0, 'Weight must be positive').optional(),
+  dimensions: z.object({
+    length: z.number().min(0).optional(),
+    width: z.number().min(0).optional(),
+    height: z.number().min(0).optional(),
+  }).optional(),
+  tags: z.array(z.string()).optional(),
+  images: z.array(z.string()).min(1, 'At least one image required'),
+});
 
-  const productSchema = z.object({
-    name: z.string().min(1, t('admin.productForm.nameRequired')).max(200, t('admin.productForm.nameMaxLength')),
-    sku: z.string().min(1, t('admin.productForm.skuRequired')).max(50, t('admin.productForm.skuMaxLength')),
-    category: z.string().min(1, t('admin.productForm.categoryRequired')),
-    price: z.number().min(0, t('admin.productForm.priceMustBePositive')),
-    comparePrice: z.number().min(0, t('admin.productForm.priceMustBePositive')).optional(),
-    costPrice: z.number().min(0, t('admin.productForm.priceMustBePositive')).optional(),
-    stock: z.number().int().min(0, t('admin.productForm.stockMustBePositive')),
-    lowStockThreshold: z.number().int().min(0, t('admin.productForm.stockMustBePositive')),
-    status: z.enum(['active', 'inactive', 'draft']),
-    description: z.string().max(2000, t('admin.productForm.descriptionMaxLength')).optional(),
-    shortDescription: z.string().max(500, t('admin.productForm.shortDescriptionMaxLength')).optional(),
-    weight: z.number().min(0, t('admin.productForm.weightMustBePositive')).optional(),
-    dimensions: z.object({
-      length: z.number().min(0).optional(),
-      width: z.number().min(0).optional(),
-      height: z.number().min(0).optional(),
-    }).optional(),
-    tags: z.array(z.string()).optional(),
-    images: z.array(z.string()).min(1, t('admin.productForm.atLeastOneImage')),
-  });
-
-  type ProductFormData = z.infer<typeof productSchema>;
+type ProductFormData = z.infer<typeof productSchema>;
 
 interface Product {
   id: string;
